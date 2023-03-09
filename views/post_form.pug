@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p  #{title}
+  form.post-form(action="", method="post") 
+    label(for="title") Title
+    input#post(type="text", name="title")
+    label(for="post") Post
+    input#post(type="text" name="post")
+    button(type="submit") Post
+    if errors
+        ul
+        for error in errors
+            li!= error.msg
